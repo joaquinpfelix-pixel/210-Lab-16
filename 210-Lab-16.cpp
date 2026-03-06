@@ -37,12 +37,9 @@ void populateColor(Color &c, int r, int g, int b);
 int main() 
 {
     Color color1;
-    Color color2;
-    Color color3;
-
-    populateColor(color1, 255, 0, 0);
-    populateColor(color2, 0, 255, 0);
-    populateColor(color3, 0, 0, 255);
+    Color color2(255, 0, 0);
+    Color color3(0, 255);
+    Color color4(0, 0, 255);
 
     cout << "Color Values" << endl;
     cout << "------------" << endl;
@@ -50,9 +47,17 @@ int main()
     color1.print();
     color2.print();
     color3.print();
+    color4.print();
 
     return 0;
 
+}
+
+Color::Color()
+{
+    red = 0;
+    green = 0;
+    blue = 0;
 }
 
 Color::Color(int r, int g, int b)
@@ -67,13 +72,6 @@ Color::Color(int r, int g)
     setRed(r);
     setGreen(g);
     blue = 0;
-}
-
-void populateColor(Color &c, int r, int g, int b)
-{
-    c.setRed(r);
-    c.setGreen(g);
-    c.setBlue(b);
 }
 
 void Color::setRed(int r) 
