@@ -16,6 +16,9 @@ class Color
 
     public:
     //Constructors
+    Color();
+    Color(int r, int g, int b);
+    Color(int r, int g);
     void setRed(int r);
     void setGreen(int g);
     void setBlue(int b);
@@ -52,6 +55,19 @@ int main()
 
 }
 
+Color::Color(int r, int g, int b)
+{
+    setRed(r);
+    setGreen(g);
+    setBlue(b);
+}
+
+Color::Color(int r, int g)
+{
+    setRed(r);
+    setGreen(g);
+    blue = 0;
+}
 
 void populateColor(Color &c, int r, int g, int b)
 {
